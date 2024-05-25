@@ -1,0 +1,76 @@
+Let's refresh some basics on handling exceptions in JAVA-
+
+✅ Catch with Precision
+- Catch specific exceptions rather than generic ones like Exception.
+- This allows you to handle each exception type differently and provide tailored solutions.
+
+try {
+ // Code that may throw specific exceptions
+} catch (FileNotFoundException e) {
+ // Handle file not found exception
+} catch (IOException e) {
+ // Handle IO exception
+}
+
+
+✅ Graceful Error Handling
+- When an exception strikes, don't leave your users in the dark!
+- Provide meaningful error messages or logs to facilitate troubleshooting and enhance the user experience.
+
+try {
+ // Code that may throw an exception
+} catch (Exception e) {
+ logger.error("An error occurred: " + e.getMessage());
+ // Provide meaningful error message to aid in troubleshooting
+}
+
+
+✅ Resource Cleanup with Finesse
+- Use the 'finally' block only to release system resources like file handles, database connections, or network connections. 
+
+try (FileInputStream fileInputStream = new FileInputStream("file.txt")) {
+ // Code
+} catch (IOException e) {
+ // Handle exception 
+} finally {
+ // Cleanup: The file input stream will be closed automatically
+}
+
+
+✅ Rethrow Strategically
+- Consider whether to re-throw an exception or wrap it in a new one. 
+- Rethrowing can be useful for propagating errors, but remember to provide valuable context for smooth debugging.
+
+try {
+ // Code that may throw an exception
+} catch (IOException e) {
+ logger.error("An error occurred: " + e.getMessage());
+ throw new CustomException("An error occurred while processing the data.", e);
+ // Rethrow the exception while providing additional context
+}
+
+
+✅ Mindful Checked Exceptions
+- Choose checked exceptions wisely. Excessive use can clutter code and make it harder to maintain.
+- Opt for unchecked exceptions or custom types when they fit the bill.
+
+public void readFile() throws IOException {
+ // Code that may throw IOException
+}
+
+
+✅ Embrace the Power of 'try-with-resources':
+- For automatic resource management, leverage the elegance of the try-with-resources statement.
+- It ensures proper resource closure and minimizes leaks.
+
+try (Connection connection = DriverManager.getConnection(url, username, password);
+ Statement statement = connection.createStatement()) {
+ // Code that uses the connection and statement
+} catch (SQLException e) {
+ // Handle any exceptions that occur
+}
+
+
+✅ Ignoring is Not an Option
+- Avoid turning a blind eye to exceptions!
+
