@@ -1,0 +1,11 @@
+1️⃣ Indexing: Think of indexes like a well-organized library. They help quickly find the right information. Use them wisely.
+
+2️⃣ Query Structure: Keep your queries simple and to the point. Avoid unnecessary complexities. Simple queries can still get the job done effectively.
+
+3️⃣ Data Normalization: Keep your data tidy. It's like tidying up your room – it's easier to find things when they're organized.
+
+4️⃣ Functions: Be cautious with functions. Some can slow down your queries, especially with large amounts of data.
+
+5️⃣ Analyzing Execution Plans: Understand how your database handles queries. It's like knowing the route before you start a journey – helps you avoid traffic.
+
+6️⃣ Regular Maintenance: Just like taking care of a garden, databases need upkeep too. Regularly clean up and update to keep things running smoothly.
